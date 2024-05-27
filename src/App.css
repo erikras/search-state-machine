@@ -1,0 +1,133 @@
+body * {
+  box-sizing: border-box;
+}
+
+.App {
+  width: 400px;
+  margin: 3rem auto;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+input.open {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 1px solid transparent;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  overflow: hidden;
+}
+
+li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+li.highlighted {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.spinner {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+
+.no-results {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+@-moz-keyframes spinner {
+  0% {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* :not(:required) hides this rule from IE9 and below */
+.spinner:not(:required) {
+  -moz-animation: spinner 1500ms infinite linear;
+  -webkit-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -moz-box-shadow:
+    cornflowerblue 1.5em 0 0 0,
+    cornflowerblue 1.1em 1.1em 0 0,
+    cornflowerblue 0 1.5em 0 0,
+    cornflowerblue -1.1em 1.1em 0 0,
+    cornflowerblue -1.5em 0 0 0,
+    cornflowerblue -1.1em -1.1em 0 0,
+    cornflowerblue 0 -1.5em 0 0,
+    cornflowerblue 1.1em -1.1em 0 0;
+  -webkit-box-shadow:
+    cornflowerblue 1.5em 0 0 0,
+    cornflowerblue 1.1em 1.1em 0 0,
+    cornflowerblue 0 1.5em 0 0,
+    cornflowerblue -1.1em 1.1em 0 0,
+    cornflowerblue -1.5em 0 0 0,
+    cornflowerblue -1.1em -1.1em 0 0,
+    cornflowerblue 0 -1.5em 0 0,
+    cornflowerblue 1.1em -1.1em 0 0;
+  box-shadow:
+    cornflowerblue 1.5em 0 0 0,
+    cornflowerblue 1.1em 1.1em 0 0,
+    cornflowerblue 0 1.5em 0 0,
+    cornflowerblue -1.1em 1.1em 0 0,
+    cornflowerblue -1.5em 0 0 0,
+    cornflowerblue -1.1em -1.1em 0 0,
+    cornflowerblue 0 -1.5em 0 0,
+    cornflowerblue 1.1em -1.1em 0 0;
+  display: inline-block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin: 1.5em;
+  overflow: hidden;
+  text-indent: 100%;
+}
